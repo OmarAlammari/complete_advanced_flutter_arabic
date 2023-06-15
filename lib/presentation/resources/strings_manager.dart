@@ -1,14 +1,29 @@
 class AppStrings {
-  static const noRouteFound = "no Route Found";
-  static const onBoardingTitle1 = "on_boarding_title1";
-  static const onBoardingTitle2 = "on_boarding_title2";
-  static const onBoardingTitle3 = "on_boarding_title3";
-  static const onBoardingTitle4 = "on_boarding_title4";
+  static const noRouteFound = "No Route Found";
+  static const onBoardingTitle1 = "SEE THE BEST COURSE #1";
+  static const onBoardingTitle2 = "SEE THE BEST COURSE #2";
+  static const onBoardingTitle3 = "SEE THE BEST COURSE #3";
+  static const onBoardingTitle4 = "SEE THE BEST COURSE #4";
 
-  static const onBoardingSubTitle1 = "on_boarding_desc1";
-  static const onBoardingSubTitle2 = "on_boarding_desc2";
-  static const onBoardingSubTitle3 = "on_boarding_desc3";
-  static const onBoardingSubTitle4 = "on_boarding_desc4";
+  static const onBoardingSubTitle1 =
+      "Tut app is an awesome flutter application using clean architecture #1";
+  static const onBoardingSubTitle2 =
+      "Tut app is an awesome flutter application using clean architecture #2";
+  static const onBoardingSubTitle3 =
+      "Tut app is an awesome flutter application using clean architecture #3";
+  static const onBoardingSubTitle4 =
+      "Tut app is an awesome flutter application using clean architecture #4";
+  // static const noRouteFound = "no Route Found";
+  // static const onBoardingTitle1 = "on_boarding_title1";
+  // static const onBoardingTitle2 = "on_boarding_title2";
+  // static const onBoardingTitle3 = "on_boarding_title3";
+  // static const onBoardingTitle4 = "on_boarding_title4";
+
+  // static const onBoardingSubTitle1 = "on_boarding_desc1";
+  // static const onBoardingSubTitle2 = "on_boarding_desc2";
+  // static const onBoardingSubTitle3 = "on_boarding_desc3";
+  // static const onBoardingSubTitle4 = "on_boarding_desc4";
+
   static const skip = "skip";
   static const username = "username_hint";
   static const password = "password_hint";
