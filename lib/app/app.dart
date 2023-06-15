@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyApp extends StatefulWidget {
   // named constructor
   MyApp._internal();
@@ -13,7 +12,7 @@ class MyApp extends StatefulWidget {
   factory MyApp() => _instance; // factory
 
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
