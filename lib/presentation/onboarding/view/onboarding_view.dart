@@ -172,16 +172,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       "phone": "713713392",
       "email": "abc@gmail.com",
       "link": "omarFacebook.com",
-
     },
   };
   // retrofit
   // analyzer
   // dio
   // json_serializable
-  // retrofit_generator 
-  // build_runner  
-
+  // retrofit_generator
+  // build_runner
 
   //https://omaralammari1234.mocklab.io//customer/login
   Widget _getProperCircle(int index, int currentIndex) {
