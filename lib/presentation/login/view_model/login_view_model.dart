@@ -1,11 +1,10 @@
 import 'dart:async';
 
-import 'package:complete_advanced_flutter_arabic/presentation/common/state_renderer/state_renderer.dart';
-import 'package:complete_advanced_flutter_arabic/presentation/common/state_renderer/state_renderer_impl.dart';
-
 import '../../../domain/use_case/login_use_case.dart';
 import '../../base/base_view_model.dart';
 import '../../common/freezed_data_classes.dart';
+import '../../common/state_renderer/state_renderer.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
 
 class LoginViewModel extends BaseViewModel
     with LoginViewModelInputs, LoginViewModelOutputs {
@@ -16,6 +15,9 @@ class LoginViewModel extends BaseViewModel
 
   final StreamController _areAllInputsValidStreamController =
       StreamController<void>.broadcast();
+
+  StreamController isUserLoginSuccessfullyStreamController =
+      StreamController<bool>();
 
   var loginObject = LoginObject('', '');
   final LoginUseCase _loginUseCase;
@@ -29,6 +31,7 @@ class LoginViewModel extends BaseViewModel
     _userNameStreamController.close();
     _passwordStreamController.close();
     _areAllInputsValidStreamController.close();
+    isUserLoginSuccessfullyStreamController.close();
   }
 
   @override
@@ -72,15 +75,15 @@ class LoginViewModel extends BaseViewModel
         // left -> failure
         inputState.add(
           ErrorState(StateRendererType.popupErrorState, failure.message),
-        )
+        ),
         // print(failure.message)
       },
       (data) => {
         // right -> data (success)
-
         // print(data.customer?.name),
-
         inputState.add(ContentState()),
+        // navigate to main screen
+        isUserLoginSuccessfullyStreamController.add(true),
       },
     );
   }

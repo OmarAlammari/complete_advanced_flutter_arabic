@@ -1,6 +1,6 @@
-import 'package:complete_advanced_flutter_arabic/app/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../app/constants.dart';
 import '../../resources/strings_manager.dart';
 import 'state_renderer.dart';
 

@@ -46,26 +46,26 @@ class AppPreferences {
   //   }
   // }
 
-  // // on boarding
+  // on boarding
 
-  // Future<void> setOnBoardingScreenViewed() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_ONBOARDING_SCREEN_VIEWED, true);
-  // }
+  Future<void> setOnBoardingScreenViewed() async {
+    _sharedPreferences.setBool(PREFS_KEY_ONBOARDING_SCREEN_VIEWED, true);
+  }
 
-  // Future<bool> isOnBoardingScreenViewed() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_ONBOARDING_SCREEN_VIEWED) ??
-  //       false;
-  // }
+  Future<bool> isOnBoardingScreenViewed() async {
+    return _sharedPreferences.getBool(PREFS_KEY_ONBOARDING_SCREEN_VIEWED) ??
+        false;
+  }
 
-  // //login
+  //login
 
-  // Future<void> setUserLoggedIn() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_IS_USER_LOGGED_IN, true);
-  // }
+  Future<void> setUserLoggedIn() async {
+    _sharedPreferences.setBool(PREFS_KEY_IS_USER_LOGGED_IN, true);
+  }
 
-  // Future<bool> isUserLoggedIn() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
-  // }
+  Future<bool> isUserLoggedIn() async {
+    return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
+  }
 
   // Future<void> logout() async {
   //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
