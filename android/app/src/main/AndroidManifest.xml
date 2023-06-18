@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.complete_advanced_flutter_arabic">
+    <!-- <uses-permission android:name-"android.permission.INTERNET"/> -->
+            <!-- android:usesCleartextTraffic="true" -->
+
+
    <application
         android:label="complete_advanced_flutter_arabic"
         android:name="${applicationName}"
