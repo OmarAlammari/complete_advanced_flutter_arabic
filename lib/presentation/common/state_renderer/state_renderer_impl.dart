@@ -124,11 +124,6 @@ extension FlowStateExtension on FlowState {
             retryActionFunction: () {},
           );
         }
-      case ContentState:
-        {
-          dismissDialog(context);
-          return contentScreenWidget;
-        }
       case SuccessState:
         {
           // i should check if we are showing loading popup to remove it before showing success popup
@@ -140,6 +135,12 @@ extension FlowStateExtension on FlowState {
           // return content ui of the screen
           return contentScreenWidget;
         }
+      case ContentState:
+        {
+          dismissDialog(context);
+          return contentScreenWidget;
+        }
+
       default:
         {
           dismissDialog(context);

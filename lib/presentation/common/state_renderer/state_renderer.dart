@@ -53,6 +53,7 @@ class StateRenderer extends StatelessWidget {
       case StateRendererType.popupErrorState:
         return _getPopUpDialog(context, [
           _getAnimatedImage(JsonAssets.error),
+          _getMessage(title),
           _getMessage(message),
           _getRetryButton(AppStrings.ok, () => Navigator.of(context).pop())
         ]);
@@ -62,7 +63,7 @@ class StateRenderer extends StatelessWidget {
           _getAnimatedImage(JsonAssets.success),
           _getMessage(title),
           _getMessage(message),
-          _getRetryButton(AppStrings.ok, () {})
+          _getRetryButton(AppStrings.ok, () => Navigator.of(context).pop())
           // _getRetryButton(AppStrings.ok, context, () {})
         ]);
 
@@ -139,10 +140,9 @@ class StateRenderer extends StatelessWidget {
 
   Widget _getAnimatedImage(String animationName) {
     return SizedBox(
-      height: AppSize.s100,
-      width: AppSize.s100,
-      child: Lottie.asset(animationName)
-    );
+        height: AppSize.s100,
+        width: AppSize.s100,
+        child: Lottie.asset(animationName));
   }
 
   Widget _getMessage(String message) {
@@ -182,4 +182,6 @@ class StateRenderer extends StatelessWidget {
       ),
     );
   }
+
+
 }

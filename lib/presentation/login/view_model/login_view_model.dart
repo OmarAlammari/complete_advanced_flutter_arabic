@@ -82,7 +82,7 @@ class LoginViewModel extends BaseViewModel
       (data) => {
         // right -> data (success)
         // print(data.customer?.name),
-        inputState.add(ContentState()),
+        // inputState.add(ContentState()),
         // navigate to main screen
         isUserLoginSuccessfullyStreamController.add(true),
       },
