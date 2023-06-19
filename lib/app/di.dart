@@ -9,7 +9,9 @@ import '../data/network/dio_factory.dart';
 import '../data/network/network_info.dart';
 import '../data/repository/repository_impl.dart';
 import '../domain/repository/repository.dart';
+import '../domain/use_case/forget_password_use_case.dart';
 import '../domain/use_case/login_use_case.dart';
+import '../presentation/forgot_password/view_model/forgot_password_view_model.dart';
 import '../presentation/login/view_model/login_view_model.dart';
 import 'app_prefs.dart';
 
@@ -64,19 +66,19 @@ initLoginModule() {
   if (!GetIt.I.isRegistered<LoginUseCase>()) {
     instance.registerFactory<LoginUseCase>(() => LoginUseCase(instance()));
     instance.registerFactory<LoginViewModel>(() => LoginViewModel(instance()));
-    //   instance.registerFactory<LoginUseCase>(() => LoginUseCase(instance()));
-    //   instance.registerFactory<LoginViewModel>(() => LoginViewModel(instance()));
   }
 }
-/* 
+
 initForgotPasswordModule() {
-  if (!GetIt.I.isRegistered<ForgotPasswordUseCase>()) {
-    instance.registerFactory<ForgotPasswordUseCase>(
-        () => ForgotPasswordUseCase(instance()));
+  if (!GetIt.I.isRegistered<ForgetPasswordUseCase>()) {
+    instance.registerFactory<ForgetPasswordUseCase>(
+        () => ForgetPasswordUseCase(instance()));
     instance.registerFactory<ForgotPasswordViewModel>(
         () => ForgotPasswordViewModel(instance()));
   }
 }
+
+/* 
 
 initRegisterModule() {
   if (!GetIt.I.isRegistered<RegisterUseCase>()) {

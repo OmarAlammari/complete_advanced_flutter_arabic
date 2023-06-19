@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:complete_advanced_flutter_arabic/app/app_prefs.dart';
-import 'package:complete_advanced_flutter_arabic/app/di.dart';
 import 'package:flutter/material.dart';
 
+import '../../app/app_prefs.dart';
+import '../../app/di.dart';
 import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants_manager.dart';
@@ -25,7 +25,9 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() async {
-    _appPreferences.isUserLoggedIn().then(
+    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+
+    /* _appPreferences.isUserLoggedIn().then(
           (isUserLoggedIn) => {
             if (isUserLoggedIn)
               {
@@ -55,6 +57,7 @@ class _SplashViewState extends State<SplashView> {
               }
           },
         );
+   */
   }
 
   @override

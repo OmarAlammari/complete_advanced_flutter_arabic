@@ -4,6 +4,7 @@ import '../common/state_renderer/state_renderer_impl.dart';
 
 abstract class BaseViewModel extends BaseViewModelInputs
     with BaseViewModelOutputs {
+      
   // shared variables and function that will be used through any view model.
   final StreamController _inputStreamController =
       StreamController<FlowState>.broadcast();

@@ -1,5 +1,5 @@
-import 'package:complete_advanced_flutter_arabic/data/network/app_api.dart';
 
+import '../network/app_api.dart';
 import '../network/requests.dart';
 import '../response/responses.dart';
 
@@ -8,7 +8,7 @@ abstract class RemoteDataSource {
 
   // Future<AuthenticationResponse> register(RegisterRequest registerRequest);
 
-  // Future<ForgotPasswordResponse> forgotPassword(String email);
+  Future<ForgotPasswordResponse> forgotPassword(String email);
 
   // Future<HomeResponse> getHomeData();
 
@@ -26,10 +26,10 @@ class RemoteDataSourceImpl implements RemoteDataSource {
         loginRequest.email, loginRequest.password);
   }
 
-  // @override
-  // Future<ForgotPasswordResponse> forgotPassword(String email) async {
-  //   return await _appServiceClient.forgotPassword(email);
-  // }
+  @override
+  Future<ForgotPasswordResponse> forgotPassword(String email) async {
+    return await _appServiceClient.forgotPassword(email);
+  }
 
   // @override
   // Future<AuthenticationResponse> register(

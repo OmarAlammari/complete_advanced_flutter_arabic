@@ -114,10 +114,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             padding: const EdgeInsets.all(AppPadding.p14),
             child: GestureDetector(
               onTap: () {
-                _pageController.animateToPage(_viewModel.goPrevious(),
-                    duration: const Duration(
-                        milliseconds: AppConstants.sliderAnimationTime),
-                    curve: Curves.bounceInOut);
+                _pageController.animateToPage(
+                  _viewModel.goPrevious(),
+                  duration: const Duration(
+                      milliseconds: AppConstants.sliderAnimationTime),
+                  curve: Curves.bounceInOut,
+                );
               },
               child: SizedBox(
                 width: AppSize.s20,
@@ -160,32 +162,33 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     );
   }
 
-  var body1 = {
-    "email": "abc@gmail.com",
-    "password": "123456",
+  /* var body1 = {
+    'email': 'abc@gmail.com',
+    'password': '123456',
   };
   var vv = {
-    "status": 0,
-    "message": "user logged in successfully",
-    "customer": {
-      "id": "12345678",
-      "name": "omar alammari",
-      "numOfNotifications": 12
+    'status': 0,
+    'message': 'user logged in successfully',
+    'customer': {
+      'id': '12345678',
+      'name': 'omar alammari',
+      'numOfNotifications': 12
     },
-    "content": {
-      "phone": "713713392",
-      "email": "abc@gmail.com",
-      "link": "omarFacebook.com",
+    'content': {
+      'phone': '713713392',
+      'email': 'abc@gmail.com',
+      'link': 'omarFacebook.com',
     },
   };
+   */
   // retrofit
   // analyzer
   // dio
   // json_serializable
   // retrofit_generator
   // build_runner
-
   //https://omaralammari1234.mocklab.io//customer/login
+
   Widget _getProperCircle(int index, int currentIndex) {
     if (index == currentIndex) {
       return SvgPicture.asset(ImageAssets.hollowCircleIc);

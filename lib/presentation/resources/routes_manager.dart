@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/di.dart';
-import '../forgot_password/forgot_password_view.dart';
+import '../forgot_password/view/forgot_password_view.dart';
 import '../login/view/login_view.dart';
 import '../main/main_view.dart';
 import '../onboarding/view/onboarding_view.dart';
@@ -38,7 +38,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const RegisterView());
 
       case Routes.forgotPasswordRoute:
-        // initForgotPasswordModule();
+        initForgotPasswordModule();
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
 
       case Routes.mainRoute:
@@ -58,14 +58,14 @@ class RouteGenerator {
     return MaterialPageRoute(
       builder: (_) => Scaffold(
         appBar: AppBar(
-          title:  const Text(
+          title: const Text(
             // 'No Route Found'
-              AppStrings.noRouteFound,
-              ),
+            AppStrings.noRouteFound,
+          ),
         ),
         body: const Center(
           child: Text(
-              AppStrings.noRouteFound,
+            AppStrings.noRouteFound,
 
             // 'AppStrings.noRouteFound.tr()',
           ),

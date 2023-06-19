@@ -1,5 +1,3 @@
-// onboarding models
-// import 'package:advanced_flutter_arabic/app/extensions.dart';
 
 class SliderObject {
   String title;

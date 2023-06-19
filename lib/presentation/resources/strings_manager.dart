@@ -16,8 +16,10 @@ class AppStrings {
   static const skip = 'Skip';
   static const username = 'Username';
   static const password = 'Password';
+  static const email = 'E-mail';
   static const usernameError = 'Please enter your userName';
   static const passwordError = 'Please enter your password';
+  static const emailError = 'Please enter your email';
   static const login = 'Login';
   static const forgetPassword = 'Forget password';
   static const registerText = 'Not a member ? Sign up';
@@ -26,6 +28,9 @@ class AppStrings {
   static const loading = 'Loading...';
   static const ok = 'Ok';
   static const retryAgain = 'Retry again';
+  static const String resetPassword = 'Reset password';
+  static const String emailHint = 'email_hint';
+  static const String invalidEmail = 'email_error';
 
   // ignore: prefer_single_quotes
   static const String badRequestError = "bad_request_error";

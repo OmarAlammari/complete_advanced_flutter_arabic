@@ -1,10 +1,8 @@
-// ignore_for_file: constant_identifier_names
 
-import 'package:complete_advanced_flutter_arabic/data/network/failure.dart';
 import 'package:dio/dio.dart';
-// import 'package:easy_localization/easy_localization.dart';
 
 import '../../presentation/resources/strings_manager.dart';
+import 'failure.dart';
 
 class ErrorHandler implements Exception {
   late Failure failure;

@@ -175,12 +175,12 @@ class _LoginViewState extends State<LoginView> {
 }
  */
 
-import 'package:complete_advanced_flutter_arabic/app/app_prefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../common/state_renderer/state_renderer_impl.dart';
+import '../../../app/app_prefs.dart';
 import '../../../app/di.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/routes_manager.dart';
@@ -193,7 +193,6 @@ class LoginView extends StatefulWidget {
 
   @override
   State<LoginView> createState() => _LoginViewState();
-  // _LoginViewState createState() => _LoginViewState();
 }
 
 class _LoginViewState extends State<LoginView> {
@@ -333,7 +332,7 @@ class _LoginViewState extends State<LoginView> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(
+                        Navigator.pushNamed(
                           context,
                           Routes.forgotPasswordRoute,
                         );
@@ -345,7 +344,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(
+                        Navigator.pushNamed(
                           context,
                           Routes.registerRoute,
                         );

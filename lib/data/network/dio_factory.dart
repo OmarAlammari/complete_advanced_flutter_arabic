@@ -1,8 +1,8 @@
-import 'package:complete_advanced_flutter_arabic/app/app_prefs.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import '../../app/app_prefs.dart';
 import '../../app/constants.dart';
 
 const String aPPLICATION_JSON = 'application/json';
