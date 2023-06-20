@@ -8,7 +8,6 @@ import '../../common/state_renderer/state_renderer_impl.dart';
 
 class LoginViewModel extends BaseViewModel
     with LoginViewModelInputs, LoginViewModelOutputs {
-      
   final StreamController _userNameStreamController =
       StreamController<String>.broadcast();
   final StreamController _passwordStreamController =
@@ -81,8 +80,7 @@ class LoginViewModel extends BaseViewModel
       },
       (data) => {
         // right -> data (success)
-        // print(data.customer?.name),
-        // inputState.add(ContentState()),
+        inputState.add(ContentState()),
         // navigate to main screen
         isUserLoginSuccessfullyStreamController.add(true),
       },
@@ -92,28 +90,36 @@ class LoginViewModel extends BaseViewModel
   // outputs
   @override
   Stream<bool> get outIsPasswordValid => _passwordStreamController.stream
-      .map((password) => _isPasswordValid(password));
+      .map((password) => _isValid(password));
+      // .map((password) => _isPasswordValid(password));
 
   @override
   Stream<bool> get outIsUserNameValid => _userNameStreamController.stream
-      .map((userName) => _isUserNameValid(userName));
+      .map((userName) => _isValid(userName));
+      // .map((userName) => _isUserNameValid(userName));
 
   @override
   Stream<bool> get outAreAllInputsValid =>
       _areAllInputsValidStreamController.stream
           .map((_) => _areAllInputsValid());
 
-  bool _isPasswordValid(String password) {
-    return password.isNotEmpty;
+  // bool _isPasswordValid(String password) {
+  //   return password.isNotEmpty;
+  // }
+
+  bool _isValid(String text) {
+    return text.isNotEmpty;
   }
 
-  bool _isUserNameValid(String userName) {
-    return userName.isNotEmpty;
-  }
+  // bool _isUserNameValid(String userName) {
+  //   return userName.isNotEmpty;
+  // }
 
   bool _areAllInputsValid() {
-    return _isPasswordValid(loginObject.password) &&
-        _isUserNameValid(loginObject.userName);
+    return _isValid(loginObject.password) &&
+        _isValid(loginObject.userName);
+    // return _isPasswordValid(loginObject.password) &&
+    //     _isUserNameValid(loginObject.userName);
   }
 }
 

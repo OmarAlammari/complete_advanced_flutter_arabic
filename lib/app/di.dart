@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,8 +12,10 @@ import '../data/repository/repository_impl.dart';
 import '../domain/repository/repository.dart';
 import '../domain/use_case/forget_password_use_case.dart';
 import '../domain/use_case/login_use_case.dart';
+import '../domain/use_case/register_use_case.dart';
 import '../presentation/forgot_password/view_model/forgot_password_view_model.dart';
 import '../presentation/login/view_model/login_view_model.dart';
+import '../presentation/register/view_model/register_view_model.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -78,17 +81,19 @@ initForgotPasswordModule() {
   }
 }
 
-/* 
-
 initRegisterModule() {
   if (!GetIt.I.isRegistered<RegisterUseCase>()) {
     instance
         .registerFactory<RegisterUseCase>(() => RegisterUseCase(instance()));
+
     instance.registerFactory<RegisterViewModel>(
         () => RegisterViewModel(instance()));
+
     instance.registerFactory<ImagePicker>(() => ImagePicker());
   }
 }
+/* 
+
 
 initHomeModule() {
   if (!GetIt.I.isRegistered<HomeUseCase>()) {
