@@ -18,16 +18,16 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   Timer? _timer;
-  // final AppPreferences _appPreferences = instance<AppPreferences>();
+  final AppPreferences _appPreferences = instance<AppPreferences>();
 
   _startDelay() {
     _timer = Timer(const Duration(seconds: AppConstants.splashDelay), _goNext);
   }
 
   _goNext() async {
-    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+    // Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
 
-    /* _appPreferences.isUserLoggedIn().then(
+    _appPreferences.isUserLoggedIn().then(
           (isUserLoggedIn) => {
             if (isUserLoggedIn)
               {
@@ -57,7 +57,6 @@ class _SplashViewState extends State<SplashView> {
               }
           },
         );
-   */
   }
 
   @override

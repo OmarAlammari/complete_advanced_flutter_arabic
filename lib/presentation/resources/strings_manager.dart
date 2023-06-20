@@ -51,6 +51,11 @@ class AppStrings {
   static const profilePicture = 'Profile picture';
    static const photoGallery = 'Photo from galley';
   static const photoCamera = 'Photo from camera';
+
+  static const home = 'Home';
+  static const notifications = 'Notifications';
+  static const search = 'Search';
+  static const settings = 'Settings';
 }
 
 class AppStrings1 {
