@@ -1,3 +1,5 @@
+import 'package:complete_advanced_flutter_arabic/domain/use_case/home_use_case.dart';
+import 'package:complete_advanced_flutter_arabic/presentation/main/pages/home/view_model/home_view_model.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -92,15 +94,15 @@ initRegisterModule() {
     instance.registerFactory<ImagePicker>(() => ImagePicker());
   }
 }
-/* 
-
-
 initHomeModule() {
   if (!GetIt.I.isRegistered<HomeUseCase>()) {
     instance.registerFactory<HomeUseCase>(() => HomeUseCase(instance()));
     instance.registerFactory<HomeViewModel>(() => HomeViewModel(instance()));
   }
 }
+/* 
+
+
 
 initStoreDetailsModule() {
   if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {

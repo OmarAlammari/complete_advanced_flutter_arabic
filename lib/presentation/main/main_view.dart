@@ -30,6 +30,7 @@ class _MainViewState extends State<MainView> {
   ];
   var _title = AppStrings.home;
   var _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
