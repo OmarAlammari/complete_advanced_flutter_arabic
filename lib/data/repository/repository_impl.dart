@@ -116,4 +116,31 @@ class RepositoryImpl implements Repository {
       return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, HomeObject>> getHomeData() async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.getHomeData();
+
+        if (response.status == ApiInternalStatus.SUCCESS) {
+          // return right
+          return Right(response.toDomain());
+        } else {
+          // return either left
+          return Left(
+            Failure(
+              response.status ?? ResponseCode.DEFAULT,
+              response.message ?? ResponseMessage.DEFAULT,
+            ),
+          );
+        }
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    } else {
+      // return internet connection error
+      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+    }
+  }
 }
