@@ -7,7 +7,7 @@ import '../main/main_view.dart';
 import '../onboarding/view/onboarding_view.dart';
 import '../register/view/register_view.dart';
 import '../splash/splash_view.dart';
-import '../store_details/store_details_view.dart';
+import '../store_details/view/store_details_view.dart';
 import 'strings_manager.dart';
 
 class Routes {
@@ -46,7 +46,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const MainView());
 
       case Routes.storeDetailsRoute:
-        // initStoreDetailsModule();
+        initStoreDetailsModule();
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
 
       default:

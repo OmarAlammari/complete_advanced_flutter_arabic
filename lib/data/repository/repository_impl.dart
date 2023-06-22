@@ -166,30 +166,43 @@ class RepositoryImpl implements Repository {
     }
   }
 
-  // @override
-  // Future<Either<Failure, HomeObject>> getHomeData() async {
-  //   if (await _networkInfo.isConnected) {
-  //     try {
-  //       final response = await _remoteDataSource.getHomeData();
+  @override
+  Future<Either<Failure, StoreDetails>> getStoreDetails() async {
+    try {
+      // get response from cache
+      final response = await _localDataSource.getStoreDetails();
+      return Right(response.toDomain());
+    } catch (cacheError) {
+      if (await _networkInfo.isConnected) {
+        // its the time to get from API side
+        try {
+          final response = await _remoteDataSource.getStoreDetails();
 
-  //       if (response.status == ApiInternalStatus.SUCCESS) {
-  //         // return right
-  //         return Right(response.toDomain());
-  //       } else {
-  //         // return either left
-  //         return Left(
-  //           Failure(
-  //             response.status ?? ResponseCode.DEFAULT,
-  //             response.message ?? ResponseMessage.DEFAULT,
-  //           ),
-  //         );
-  //       }
-  //     } catch (error) {
-  //       return Left(ErrorHandler.handle(error).failure);
-  //     }
-  //   } else {
-  //     // return internet connection error
-  //     return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
-  //   }
-  // }
+          if (response.status == ApiInternalStatus.SUCCESS) {
+            // success
+            // return either right
+            // return data
+            // save home response to cache
+
+            // save response in cache (local data source)
+            _localDataSource.saveStoreDetailsToCache(response);
+            return Right(response.toDomain());
+          } else {
+            // failure --return business error
+            // return either left
+            return Left(
+              Failure(ApiInternalStatus.FAILURE,
+                  response.message ?? ResponseMessage.DEFAULT),
+            );
+          }
+        } catch (error) {
+          return Left(ErrorHandler.handle(error).failure);
+        }
+      } else {
+        // return internet connection error
+        // return either left
+        return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+      }
+    }
+  }
 }

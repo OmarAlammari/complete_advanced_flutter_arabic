@@ -1,3 +1,5 @@
+import 'package:complete_advanced_flutter_arabic/domain/use_case/store_details_use_case.dart';
+import 'package:complete_advanced_flutter_arabic/presentation/store_details/view_model/store_details_view_model.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -102,9 +104,6 @@ initHomeModule() {
     instance.registerFactory<HomeViewModel>(() => HomeViewModel(instance()));
   }
 }
-/* 
-
-
 
 initStoreDetailsModule() {
   if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
@@ -112,4 +111,5 @@ initStoreDetailsModule() {
         () => StoreDetailsUseCase(instance()));
     instance.registerFactory<StoreDetailsViewModel>(
         () => StoreDetailsViewModel(instance()));
-  } */
+  }
+}

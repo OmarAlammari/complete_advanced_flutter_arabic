@@ -97,6 +97,19 @@ extension HomeResponseMapper on HomeResponse? {
   }
 }
 
+extension StoreDetailsResponseMapper on StoreDetailsResponse? {
+  StoreDetails toDomain() {
+    return StoreDetails(
+      this?.id.orZero() ?? Constants.zero,
+      this?.title.orEmpty() ?? Constants.empty,
+      this?.image.orEmpty() ?? Constants.empty,
+      this?.details.orEmpty() ?? Constants.empty,
+      this?.services.orEmpty() ?? Constants.empty,
+      this?.about.orEmpty() ?? Constants.empty,
+    );
+  }
+}
+
 // extension ServiceResponseMapper on ServiceResponse? {
 //   Service toDomain() {
 //     return Service(

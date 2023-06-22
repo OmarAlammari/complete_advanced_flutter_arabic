@@ -14,5 +14,5 @@ abstract class Repository {
 
   Future<Either<Failure, HomeObject>> getHomeData();
 
-  // Future<Either<Failure, StoreDetails>> getStoreDetails();
+  Future<Either<Failure, StoreDetails>> getStoreDetails();
 }

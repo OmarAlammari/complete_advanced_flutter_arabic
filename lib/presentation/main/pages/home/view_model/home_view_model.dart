@@ -11,6 +11,7 @@ import '../../../../common/state_renderer/state_renderer_impl.dart';
 
 class HomeViewModel extends BaseViewModel
     with HomeViewModelInput, HomeViewModelOutput {
+      
   final _dataStreamController = BehaviorSubject<HomeViewObject>();
 
   final HomeUseCase _homeUseCase;

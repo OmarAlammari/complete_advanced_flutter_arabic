@@ -1,7 +1,6 @@
-
 // ignore_for_file: constant_identifier_names
 
-import 'package:complete_advanced_flutter_arabic/data/network/error_handler.dart';
+import '../network/error_handler.dart';
 
 import '../response/responses.dart';
 
@@ -19,11 +18,9 @@ abstract class LocalDataSource {
 
   void removeFromCache(String key);
 
+  Future<StoreDetailsResponse> getStoreDetails();
 
-
-  // Future<StoreDetailsResponse> getStoreDetails();
-
-  // Future<void> saveStoreDetailsToCache(StoreDetailsResponse response);
+  Future<void> saveStoreDetailsToCache(StoreDetailsResponse response);
 }
 
 class LocalDataSourceImpl implements LocalDataSource {
@@ -74,6 +71,24 @@ class LocalDataSourceImpl implements LocalDataSource {
   void removeFromCache(String key) {
     cacheMap.remove(key);
   }
+
+  @override
+  Future<StoreDetailsResponse> getStoreDetails() {
+    CachedItem? cachedItem = cacheMap[CACHE_STORE_DETAILS_KEY];
+
+    if (cachedItem != null && cachedItem.isValid(CACHE_STORE_DETAILS_INTERVAL)) {
+      // return the response from cache
+      return cachedItem.data;
+    } else {
+      // return an error that cache is not there or its not valid
+      throw ErrorHandler.handle(DataSource.CACHE_ERROR);
+    }
+  }
+
+  @override
+  Future<void> saveStoreDetailsToCache(StoreDetailsResponse response) async {
+    cacheMap[CACHE_STORE_DETAILS_KEY] = CachedItem(response);
+  }
 }
 
 class CachedItem {
@@ -88,7 +103,8 @@ extension CachedItemExtension on CachedItem {
   bool isValid(int expirationTimeInMillisecond) {
     int currentTimeInMillisecond = DateTime.now().millisecondsSinceEpoch;
 
-    bool isValid = currentTimeInMillisecond - cacheTime <= expirationTimeInMillisecond;
+    bool isValid =
+        currentTimeInMillisecond - cacheTime <= expirationTimeInMillisecond;
     // expirationTimeInMillisecond -> 60 sec
     // currentTimeInMillisecond -> 1:00:00
     // cacheTime -> 12:59:30
