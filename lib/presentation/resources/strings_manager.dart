@@ -49,7 +49,7 @@ class AppStrings {
   static const register = 'Register';
   static const mobileNumber = 'Mobile Number';
   static const profilePicture = 'Profile picture';
-   static const photoGallery = 'Photo from galley';
+  static const photoGallery = 'Photo from galley';
   static const photoCamera = 'Photo from camera';
 
   static const home = 'Home';
@@ -58,10 +58,14 @@ class AppStrings {
   static const settings = 'Settings';
   static const services = 'Services';
   static const stores = 'Stores';
-  
+
   static const String details = 'Details';
   static const String about = 'About Store';
   static const String storeDetails = 'Store details';
+  static const String changeLanguage = 'Change language';
+  static const String contactUs = 'Contact Us';
+  static const String inviteYourFriends = 'Invite Your Friends';
+  static const String logout = 'Logout';
 }
 
 class AppStrings1 {

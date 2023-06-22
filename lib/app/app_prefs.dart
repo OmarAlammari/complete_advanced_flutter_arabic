@@ -67,7 +67,7 @@ class AppPreferences {
     return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
   }
 
-  // Future<void> logout() async {
-  //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
-  // }
+  Future<void> logout() async {
+    _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
+  }
 }
