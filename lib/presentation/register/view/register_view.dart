@@ -220,10 +220,13 @@ class _RegisterViewState extends State<RegisterView> {
                     left: AppPadding.p28, right: AppPadding.p28),
                 child: Container(
                   height: AppSize.s40,
+
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
-                      Radius.circular(AppSize.s8),
+                      Radius.circular(5),
                     ),
+
+
                     border: Border.all(color: ColorManager.grey),
                   ),
                   child: GestureDetector(
